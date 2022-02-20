@@ -1,0 +1,13 @@
+{
+	"node": "n8n-nodes-base.UserClaim",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"GEP"
+	],
+
+	"alias": [
+		"User Cliam",
+		"GEP Authorization"
+	]
+}

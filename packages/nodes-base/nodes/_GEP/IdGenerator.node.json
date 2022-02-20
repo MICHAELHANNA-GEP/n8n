@@ -1,0 +1,14 @@
+{
+	"node": "n8n-nodes-base.IdGenerator",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"GEP"
+	],
+
+	"alias": [
+		"ID Generator",
+		"Document Number Generation",
+		"Auto ID"
+	]
+}
