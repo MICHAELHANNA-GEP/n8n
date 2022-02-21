@@ -4,7 +4,8 @@
 	"codexVersion": "1.0",
 	"categories": [
 		"Development",
-		"Core Nodes"
+		"Core Nodes",
+		"GEP"
 	],
 	"resources": {
 		"primaryDocumentation": [

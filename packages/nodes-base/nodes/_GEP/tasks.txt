@@ -1,0 +1,46 @@
+- Validation
+    {Schema, Payload}
+
+- GEP Rule Engine
+   Execute: {Event, Payload, token} : true|false
+
+- CDS Gallery
+    {Endpoints, Method, Header, Body, Response } => This comes from the CDS repo as Swagger files.
+
+-  Domain Model
+    {Objects }: List of objects
+
+- Core Functions
+    Document Number Generation
+        {formula: Regex}
+
+- Validation User Cliams
+
+- Execute Code
+    - JS
+    - TS
+    - C#
+
+Queue
+    - Kafka
+    - AWS SQS
+    - Azure
+
+DataStorge
+    - Eslastic
+    - sFTP
+    - FTP
+    - S3
+
+    - Mongo
+    - SQL
+    - Postgress
+    -
+
+Logger
+    - Log4net
+
+Data Service Invokation
+    - Call APIs internally or externally
+            internation: function
+            externally: http request

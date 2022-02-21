@@ -1,10 +1,15 @@
 import { IExecuteFunctions } from 'n8n-core';
-import { INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { INodeExecutionData, INodeType, INodeTypeDescription, NodeOperationError } from 'n8n-workflow';
+
+import {
+	validateJSON,
+} from './GenericFunctions';
 
 export class DataValidation implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Data Validation',
 		name: 'dataValidation',
+		icon:"file:gep.png",
 		group: ['transform'],
 		version: 1,
 		description: 'Validate payload via schema',
@@ -15,15 +20,27 @@ export class DataValidation implements INodeType {
 		inputs: ['main'],
 		outputs: ['main'],
 		properties: [
-			// Node properties which the user gets displayed and
-			// can change on the node.
 			{
-				displayName: 'My String',
-				name: 'myString',
-				type: 'string',
+				displayName: 'JSON Schema',
+				name: 'jschema',
+				type: 'json',
+				typeOptions: {
+					 editor: 'json'
+				},
 				default: '',
-				placeholder: 'Placeholder value',
-				description: 'The description text',
+				required: true,
+				description: 'JSON Schema',
+			},
+			{
+				displayName: 'Payload',
+				name: 'payload',
+				type: 'json',
+				typeOptions: {
+					editor: 'json'
+			 },
+				default: '',
+				required: true,
+				description: 'The payload',
 			},
 		],
 	};
@@ -32,16 +49,29 @@ export class DataValidation implements INodeType {
 		const items = this.getInputData();
 
 		let item: INodeExecutionData;
-		let myString: string;
-
+		let jschema: string;
+		let payload: string;
 		// Itterates over all input items and add the key "myString" with the
 		// value the parameter "myString" resolves to.
 		// (This could be a different value for each item in case it contains an expression)
 		for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
-			myString = this.getNodeParameter('myString', itemIndex, '') as string;
-			item = items[itemIndex];
+			jschema = this.getNodeParameter('jschema', itemIndex, '') as string;
+			payload = this.getNodeParameter('payload', itemIndex, '') as string;
 
-			item.json.myString = myString;
+			if(validateJSON(payload) === undefined)
+			{
+				throw new NodeOperationError(this.getNode(), 'payload must be a valid JSON');
+			}
+			if(validateJSON(jschema) === undefined)
+			{
+				throw new NodeOperationError(this.getNode(), 'Json Schema must be a valid JSON');
+			}
+
+			let validate = require('jsonschema').validate;
+			let res = 	validate(payload, jschema)
+
+			item = items[itemIndex];
+			item.json = res;
 		}
 
 		return this.prepareOutputData(items);

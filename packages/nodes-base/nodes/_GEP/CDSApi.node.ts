@@ -19,8 +19,8 @@ export class CDSApi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'CDS API',
 		name: 'CDSApi',
+		icon:"file:gep.png",
 		group: ['transform'],
-		icon: 'fa:server',
 		version: 1,
 		description: 'Interact with GEP CDS Apis',
 		defaults: {
@@ -66,19 +66,7 @@ export class CDSApi implements INodeType {
 				{
 					name: "Users",
 					value: "http://api.gep.com/v2/user"
-				},
-				{
-					name: "XYZ",
-					value: "http://api.gep.com/v2/XYZ"
-				},
-				{
-					name: "ABC",
-					value: "http://api.gep.com/v2/ABC"
-				},
-				{
-					name: "123",
-					value: "http://api.gep.com/v2/123"
-				},
+				}
 			];
 
 				// let data;

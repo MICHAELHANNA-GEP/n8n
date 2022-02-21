@@ -5,6 +5,7 @@ export class IdGenerator implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Id Generator',
 		name: 'idGenerator',
+		icon:"file:gep.png",
 		group: ['transform'],
 		version: 1,
 		description: 'Generate ID or Number based on Regex format',

@@ -6,6 +6,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitReturns": true,
 		"strict": true,
+		"useUnknownInCatchVariables": false,
 		"jsx": "preserve",
 		"skipLibCheck": true,
 		"importHelpers": true,

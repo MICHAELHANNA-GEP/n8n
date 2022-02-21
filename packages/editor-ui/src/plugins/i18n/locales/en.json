@@ -391,6 +391,8 @@
 	},
 	"nodeCreator": {
 		"categoryNames": {
+			"gep": "GEP Suggested Nodes ✨",
+			"gepinternals": "GEP Internals 👦",
 			"analytics": "Analytics",
 			"communication": "Communication",
 			"coreNodes": "Core Nodes",
@@ -402,7 +404,7 @@
 			"miscellaneous": "Miscellaneous",
 			"productivity": "Productivity",
 			"sales": "Sales",
-			"suggestedNodes": "Suggested Nodes ✨",
+			"suggestedNodes": "Suggested Nodes",
 			"utility": "Utility"
 		},
 		"mainPanel": {

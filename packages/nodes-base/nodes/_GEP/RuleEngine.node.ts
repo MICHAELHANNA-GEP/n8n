@@ -5,6 +5,7 @@ export class RuleEngine implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Rule Engine',
 		name: 'ruleEngine',
+		icon:"file:gep.png",
 		group: ['trigger'],
 		version: 1,
 		description: 'Check on Rules and ensure the validality of the event. ',

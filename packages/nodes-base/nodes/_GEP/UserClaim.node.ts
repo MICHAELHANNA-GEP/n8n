@@ -5,6 +5,7 @@ export class UserClaim implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'User Claim',
 		name: 'userClaim',
+		icon:'file:gep.png',
 		group: ['transform'],
 		version: 1,
 		description: 'Validate User Cliams',

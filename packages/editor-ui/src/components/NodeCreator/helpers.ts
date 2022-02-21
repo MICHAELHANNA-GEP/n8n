@@ -1,4 +1,4 @@
-import { CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, SUBCATEGORY_DESCRIPTIONS, UNCATEGORIZED_CATEGORY, UNCATEGORIZED_SUBCATEGORY, REGULAR_NODE_FILTER, TRIGGER_NODE_FILTER, ALL_NODE_FILTER, PERSONALIZED_CATEGORY  } from '@/constants';
+import { CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, SUBCATEGORY_DESCRIPTIONS, UNCATEGORIZED_CATEGORY, UNCATEGORIZED_SUBCATEGORY, REGULAR_NODE_FILTER, TRIGGER_NODE_FILTER, ALL_NODE_FILTER, PERSONALIZED_CATEGORY, GEP_INTERNAL_NODES_CATEGORY, GEP_NODES_CATEGORY  } from '@/constants';
 import { INodeCreateElement, ICategoriesWithNodes, INodeItemProps } from '@/Interface';
 import { INodeTypeDescription } from 'n8n-workflow';
 
@@ -64,7 +64,7 @@ export const getCategoriesWithNodes = (nodeTypes: INodeTypeDescription[], person
 };
 
 const getCategories = (categoriesWithNodes: ICategoriesWithNodes): string[] => {
-	const excludeFromSort = [CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, UNCATEGORIZED_CATEGORY, PERSONALIZED_CATEGORY];
+	const excludeFromSort = [GEP_NODES_CATEGORY, GEP_INTERNAL_NODES_CATEGORY, CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, UNCATEGORIZED_CATEGORY, PERSONALIZED_CATEGORY];
 	const categories = Object.keys(categoriesWithNodes);
 	const sorted = categories.filter(
 		(category: string) =>
@@ -72,7 +72,7 @@ const getCategories = (categoriesWithNodes: ICategoriesWithNodes): string[] => {
 	);
 	sorted.sort();
 
-	return [CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, PERSONALIZED_CATEGORY, ...sorted, UNCATEGORIZED_CATEGORY];
+	return [GEP_NODES_CATEGORY, GEP_INTERNAL_NODES_CATEGORY, CORE_NODES_CATEGORY, CUSTOM_NODES_CATEGORY, PERSONALIZED_CATEGORY, ...sorted, UNCATEGORIZED_CATEGORY];
 };
 
 export const getCategorizedList = (categoriesWithNodes: ICategoriesWithNodes): INodeCreateElement[] => {

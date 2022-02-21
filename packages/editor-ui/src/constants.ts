@@ -73,6 +73,9 @@ export const XERO_NODE_TYPE = 'n8n-nodes-base.xero';
 // Node creator
 export const CORE_NODES_CATEGORY = 'Core Nodes';
 export const CUSTOM_NODES_CATEGORY = 'Custom Nodes';
+export const GEP_NODES_CATEGORY = 'GEP';
+export const GEP_INTERNAL_NODES_CATEGORY = 'GEPINTERNALS';
+
 export const SUBCATEGORY_DESCRIPTIONS: {
 	[category: string]: { [subcategory: string]: string };
 } = {

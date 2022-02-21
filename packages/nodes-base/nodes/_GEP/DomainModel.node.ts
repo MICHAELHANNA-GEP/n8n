@@ -19,8 +19,8 @@ export class DomainModel implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Domain Model',
 		name: 'domainModel',
+		icon:"file:gep.png",
 		group: ['transform'],
-		icon: 'fa:table',
 		version: 1,
 		description: 'Consume GEP Data Model',
 		defaults: {
