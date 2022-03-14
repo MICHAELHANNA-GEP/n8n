@@ -21,6 +21,14 @@ export class DataValidation implements INodeType {
 		outputs: ['main'],
 		properties: [
 			{
+				displayName: 'JSON Location',
+				name: 'jschemaLocation',
+				type: 'string',
+				default: '',
+				required: true,
+				description: 'JSON Schema',
+			},
+			{
 				displayName: 'JSON Schema',
 				name: 'jschema',
 				type: 'json',
